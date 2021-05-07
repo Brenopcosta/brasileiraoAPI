@@ -59,8 +59,8 @@ public class Api {
        if(jogoNoBancoOptional.isPresent()) {
            Jogo jogoNoBanco = jogoNoBancoOptional.get();
            jogoNoBanco.setDataEHora(jogo.getDataEHora());
-           jogoNoBanco.setEquipeMandante_id(jogo.getEquipeMandante_id());
-           jogoNoBanco.setEquipeVisitante_id(jogo.getEquipeVisitante_id());
+           jogoNoBanco.setEquipeMandante(jogo.getEquipeMandante());
+           jogoNoBanco.setEquipeVisitante(jogo.getEquipeVisitante());
            jogoNoBanco.setLocal(jogo.getLocal());
            jogoNoBanco.setMomentos(jogo.getMomentos());
            jogoNoBanco.setPontosTimeMandante(jogo.getPontosTimeMandante());

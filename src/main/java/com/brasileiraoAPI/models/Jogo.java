@@ -11,10 +11,10 @@ import java.util.Map;
 
 @Document(collection = "jogos")
 public class Jogo {
-    public Jogo(String _id, String equipeMandante_id, String equipeVisitante_id, Integer pontosTimeMandante, Integer pontosTimeVisitante, Date dataEHora, String local, List<Map<String, String>> momentos) {
+    public Jogo(String _id, Equipe equipeMandante, Equipe equipeVisitante, Integer pontosTimeMandante, Integer pontosTimeVisitante, Date dataEHora, String local, List<Map<String, String>> momentos) {
         this._id = _id;
-        this.equipeMandante_id = equipeMandante_id;
-        this.equipeVisitante_id = equipeVisitante_id;
+        this.equipeMandante = equipeMandante;
+        this.equipeVisitante = equipeVisitante;
         this.pontosTimeMandante = pontosTimeMandante;
         this.pontosTimeVisitante = pontosTimeVisitante;
         this.dataEHora = dataEHora;
@@ -28,10 +28,10 @@ public class Jogo {
     private String _id;
 
     @Getter @Setter
-    public String equipeMandante_id;
+    public Equipe equipeMandante;
 
     @Getter @Setter
-    public String equipeVisitante_id;
+    public Equipe equipeVisitante;
 
     @Getter @Setter
     public Integer pontosTimeMandante;
