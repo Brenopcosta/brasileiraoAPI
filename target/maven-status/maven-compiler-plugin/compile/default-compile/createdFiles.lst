@@ -1,0 +1,6 @@
+com\brasileiraoAPI\api\Api.class
+com\brasileiraoAPI\models\Equipe.class
+com\brasileiraoAPI\Application.class
+com\brasileiraoAPI\repository\JogoRepository.class
+com\brasileiraoAPI\models\Jogo.class
+com\brasileiraoAPI\repository\EquipeRepository.class
