@@ -24,15 +24,19 @@ public class Api {
     @Autowired
     public JogoRepository jogoRepository;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "/equipes")
     public ResponseEntity<List<Equipe>> recuperarTodosOsTimes(){
         List<Equipe> equipes = equipeRepository.findAll();
+
+        System.out.println("Serão eviadas" + Integer.toString(equipes.size())+" ...");
+
         if(equipes.isEmpty()){
             return new ResponseEntity<List<Equipe>>(equipes, HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<Equipe>>(equipes, HttpStatus.OK);
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "/jogos")
     public ResponseEntity<List<Jogo>> recuperarTodosOsJogos(){
         List<Jogo> jogos = jogoRepository.findAll();
@@ -42,6 +46,7 @@ public class Api {
         return new ResponseEntity<List<Jogo>>(jogos, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(path = "/novoJogo")
     public ResponseEntity<Jogo> inserirNovoJogo(@RequestBody Jogo jogo){
         try {
@@ -52,6 +57,7 @@ public class Api {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PatchMapping(path = "/editarJogo")
     public ResponseEntity<Jogo> editarJogo(@RequestBody Jogo jogo){
        Optional<Jogo> jogoNoBancoOptional = jogoRepository.findById(jogo.get_id());
@@ -71,6 +77,7 @@ public class Api {
         return new ResponseEntity<Jogo>(jogo, HttpStatus.NOT_FOUND);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(path = "/momento/{_id}")
     public ResponseEntity<String> adicionarMomentos(@RequestBody Map<String,String> momento, @PathVariable("_id") String _id){
         try {

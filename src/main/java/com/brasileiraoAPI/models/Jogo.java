@@ -5,13 +5,12 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 @Document(collection = "jogos")
 public class Jogo {
-    public Jogo(String _id, Equipe equipeMandante, Equipe equipeVisitante, Integer pontosTimeMandante, Integer pontosTimeVisitante, Date dataEHora, String local, List<Map<String, String>> momentos) {
+    public Jogo(String _id, Equipe equipeMandante, Equipe equipeVisitante, Integer pontosTimeMandante, Integer pontosTimeVisitante, String dataEHora, String local, List<Map<String, String>> momentos) {
         this._id = _id;
         this.equipeMandante = equipeMandante;
         this.equipeVisitante = equipeVisitante;
@@ -40,7 +39,7 @@ public class Jogo {
     public Integer pontosTimeVisitante;
 
     @Getter @Setter
-    public Date dataEHora;
+    public String dataEHora;
 
     @Getter @Setter
     public String local;
